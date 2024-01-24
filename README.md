@@ -1,13 +1,9 @@
 
 ## Research Lab Website Design Template
 
-This is a research lab website template that can be used by university students / professors to create a simple website for showing and displaying their labs / research. 
+This is a research lab website modified based on https://photonlines.github.io/Research-Lab-Website/.
 
-I built this for my brother years ago, and you can find his current site here: [University of Illinois Energy Transport Research Lab](http://etrl.mechanical.illinois.edu/)
-
-You can find a live view of the template using the link below:
-
-https://photonlines.github.io/Research-Lab-Website/
+The original author built this for his/her brother years ago, and you can find his current site here: [University of Illinois Energy Transport Research Lab](http://etrl.mechanical.illinois.edu/)
 
 It was built using the libraries provided below:
 
