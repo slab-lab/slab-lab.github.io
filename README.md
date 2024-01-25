@@ -1,9 +1,9 @@
 
-## Research Lab Website Design Template
+## A research Lab Website
 
-This is a research lab website modified based on https://photonlines.github.io/Research-Lab-Website/.
+This is a research lab website, modified based on https://photonlines.github.io/Research-Lab-Website/ and https://github.com/cuhklpl/cuhklpl.github.io.
 
-The original author built this for his/her brother years ago, and you can find his current site here: [University of Illinois Energy Transport Research Lab](http://etrl.mechanical.illinois.edu/)
+The original author built this for his/her brother years ago, and you can find the current site here: [University of Illinois Energy Transport Research Lab](http://etrl.mechanical.illinois.edu/)
 
 It was built using the libraries provided below:
 
