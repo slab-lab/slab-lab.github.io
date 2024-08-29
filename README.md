@@ -1,7 +1,7 @@
 
 ## A research Lab Website
 
-This is a research lab website, modified based on https://photonlines.github.io/Research-Lab-Website/ and with reference to https://github.com/cuhklpl/cuhklpl.github.io.
+This is a research lab website, modified based on https://photonlines.github.io/Research-Lab-Website/ and with reference to https://drcczlab.github.io/index.html and https://github.com/cuhklpl/cuhklpl.github.io.
 
 The original author built this for his/her brother years ago, and you can find the current site here: [University of Illinois Energy Transport Research Lab](http://etrl.mechanical.illinois.edu/)
 
