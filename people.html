@@ -2,50 +2,96 @@
 <html lang="en">
    <head>
       <meta charset="utf-8">
-      <title>People</title>
+      <title>SLaB Lab - Home</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Caicai Zhang Lab">
+      <meta name="description" content="SLaB Lab">
       <meta name="author" content="">
       <!-- Le styles -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
       <link href="css/theme.css" rel="stylesheet">
-         <style>
-		      ol {
-	      display: block;
-	      list-style-type: disc;
-	      margin-top: 1em;
-	      margin-bottom: 1em;
-	      margin-left: 0;
-	      margin-right: 0;
-	      padding-left: 40px;
-	      background-color: white;
-	      }
-	      body {background-color: white;}
-	      </style>
+      <style>
+         ol {
+            display: block;
+            list-style-type: disc;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding-left: 40px;
+            background-color: white;
+         }
+         body {
+            background-color: white;
+         }
+         .responsive-img {
+            width: 100%;
+            height: auto;
+            max-width: 450px; /* Increase max-width to make the images larger */
+         }
+         .img-container {
+            display: flex;
+            justify-content: center; /* Center the images in the container */
+            align-items: center;
+            gap: 0; /* Remove gap between images */
+         }
+         h4 {
+            font-size: 24px;
+            margin-top: 40px; /* Increase spacing above section headings */
+            margin-bottom: 20px; /* Increase spacing below section headings */
+            text-align: center; /* Center the heading */
+         }
+         .contact-section h4 {
+            text-align: left; /* Align the "Contact us!" heading to the left */
+         }
+         p {
+            font-size: 18px;
+            margin-bottom: 20px; /* Add spacing below paragraphs */
+            line-height: 1.6; /* Adjust line spacing within paragraphs */
+         }
+         .section {
+            margin-bottom: 40px; /* Add spacing between sections */
+            text-align: left; /* Left align text in all sections */
+            padding-left: 0; /* Ensure no padding on the left */
+         }
+         .content-with-image {
+            display: flex;
+            align-items: flex-start; /* Align content at the start */
+            gap: 3px; /* Add a small gap between text and image */
+         }
+         .text-content {
+            flex: 1;
+            padding-right: 10px; /* Reduce padding to decrease gap */
+         }
+         .image-content {
+            flex: 0 0 auto;
+            margin-left: 0px; /* Reduce margin to decrease gap */
+         }
+         .contact-section {
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+         }
+      </style>
    </head>
    <body>
       <div class="container">
-         <header class="jumbotron subhead" id="overview">
-            <p class="lead">NeuroLML @ The Hong Kong Polytechnic University </p>
-            <h2>Neurocognition of Language, Music and Learning Lab</h2>
+         <header id="overview">
+            <img alt="" src="files/title2.png" style="display: block; margin: 0 auto;">
          </header>
+        
          <div class="masthead">
             <div class="navbar">
-               <div class="navbar-inner">
-                  <div class="container">
-                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><a href="#">People</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                        <li><a href="grants.html">Grants</a></li>
-			<li><a href="media.html">Media</a></li>
-                        <li><a href="contact.html">Join Experiment</a></li>
-                     </ul>
-                  </div>
-               </div>
+                <div class="navbar-inner">
+                    <div class="container">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="people.html">Members</a></li>
+                            <li><a href="publications.html">Publications</a></li>
+                            <li><a href="grants.html">Facilities</a></li>
+                            <li><a href="media.html">Collaboration & Outreach</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-         </div>
+        </div>
 
 	 <div class="row-fluid">
             <div class="span12">
