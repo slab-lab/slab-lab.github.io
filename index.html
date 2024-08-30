@@ -150,6 +150,35 @@
             <div class="span12 section">
                 <h4>We are interested in...</h4>
                 
+               <!-- Add this CSS to the <style> section of your HTML file -->
+               <style>
+                   .responsive-img {
+                       width: 100%;
+                       height: auto;
+                   }
+                   
+                   .theme-img {
+                       max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+                       height: auto; /* Maintain the aspect ratio */
+                       max-height: 250px; /* Set a maximum height to control the size */
+                       object-fit: contain; /* Ensure the image fits within the set dimensions without distortion */
+                   }
+                   
+                   .content-with-image {
+                       display: flex;
+                       align-items: flex-start;
+                       gap: 20px; /* Space between text and image */
+                   }
+               
+                   .text-content {
+                       flex: 1;
+                   }
+               
+                   .image-content {
+                       flex: 0 0 auto;
+                   }
+               </style>
+               
                <!-- First Content Block -->
                <div class="content-with-image">
                    <div class="text-content">
@@ -193,6 +222,7 @@
                        <img src="files/Theme3.PNG" alt="Illustration" class="responsive-img theme-img">
                    </div>
                </div>
+
                
 
 
