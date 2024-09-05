@@ -109,12 +109,24 @@
                      display: block;
                      margin: 0 auto;
                  }
+                .text {
+                     text-align: center;
+                 }
              </style>
         <div class="row-fluid">
             <div class="span12">
                <div class="img-container">
-                  <img src="files/slab_letter.png" class="small-img" alt="">
-                  <img src="files/Photo_Homepage.jpg" class="large-img" alt="">
+                 <div style="display: flex; justify-content: space-between;">
+                    <div style="flex: 1;">
+                        <img src="files/slab_letter.png" class="small-img" alt="Slab Letter">
+                        <div class="text">
+                            <a href="https://huma.hkust.edu.hk/">More Info</a>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="files/Photo_Homepage.jpg" class="large-img" alt="Photo Homepage">
+                    </div>
+                   </div>  
                </div>
             </div>
          </div>
