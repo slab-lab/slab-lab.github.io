@@ -268,45 +268,63 @@
          </div>	    
       </div>
                <div class="span10 section">
-                   <style>
-                       /* 设置整体布局为 Flexbox */
-                       .container {
-                           display: flex;
-                       }
-               
-                       /* 左侧文本区域样式 */
-                       .text {
-                           flex: 2; 
-                           padding: 20px;
-                       }
-               
-                       /* 右侧地图区域样式 */
-                       #map {
-                           flex: 1; 
-                           height: 400px;
-                       }
-                   </style>
-               </head>
-               <body>
-                   <div class="container">
-                       <!-- 左侧文本区域 -->
-                       <div class="text">
-                           <h2>Location Information</h2>
+                  <style>
+                      .responsive-img {
+                          width: auto;
+                          height: auto;
+                      }
+                      
+                      .theme-img {
+                          max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+                          height: auto; /* Maintain the aspect ratio */
+                          max-height: 300px; /* Set a maximum height to control the size */
+                          object-fit: contain; /* Ensure the image fits within the set dimensions without distortion */
+                      }
+                      
+                      .content-with-image {
+                          display: flex;
+                          align-items: center; /* Align the image and text at the center */
+                          gap: 20px; /* Space between text and image */
+                      }
+                  
+                      .text-content {
+                          flex: 2;
+                         text-align: justify;
+                      }
+                  
+                      .image-content {
+                          flex: 1;
+                      }
+                     .smaller1-img {
+                            max-width: 50%; /* 设置图片最大宽度为父元素宽度的一半，可以根据需要调整百分比 */
+                            height: auto; /* 保持图片的纵横比 */
+                      }
+                      .smaller2-img {
+                            max-width: 30%;
+                            height: auto;
+                      }
+                  </style>
+                  
+                  <!-- First Content Block -->
+                  <div class="content-with-image">
+                      <div class="text-content">
                            <h4>Contact us!</h4>
-                                 <p>
-                                    ​Email: <a href="mailto:qinlabhkust@gmail.com">qinlabhkust@gmail.com</a><br>
-                                    Location: Room G005,</a><br>
-                                    Cheng Yu Tung Building,</a><br>
-                                    The Hong Kong University of Science and Technology,</a><br>
-                                    Clear Water Bay, Kowloon, Hong Kong</a><br>
-                                 </p>
-                       </div>
-                       <!-- 右侧地图区域 -->
-                       <div id="map">
+                              <p>
+                                 ​Email: <a href="mailto:qinlabhkust@gmail.com">qinlabhkust@gmail.com</a><br>
+                                 Location: Room G005,</a><br>
+                                 Cheng Yu Tung Building,</a><br>
+                                 The Hong Kong University of Science and Technology,</a><br>
+                                 Clear Water Bay, Kowloon, Hong Kong</a><br>
+                              </p>
+                      </div>
+                      <div class="image-content">
                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.30910382626!2d-0.14005699632671495!3d51.50104799283726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x4876040fd06e7753%3A0xe32c235d6c3c3e!2sBuckingham%20Palace!5e0!3m2!1sen!2suk!4v1630942538704!5m2!1sen!2suk" allowfullscreen="" loading="lazy"></iframe>
                        </div>
-                   </div>
+                      </div>
+                  </div>
 
+                  
+                  
 
       <footer id="footer">
          <div class="container-fluid">
