@@ -127,6 +127,14 @@
                 .text-3 {
                      text-align: center;
                  }
+	        .container {
+		        display: flex; /* 使用 Flexbox 布局 */
+		    }
+ 	        .text-box {
+ 		       flex: 1; /* 让文本框平均占据可用空间 */
+   		     margin-right: 10px; /* 设置文本框之间的间距 */
+     		 	  padding: 10px; /* 设置内边距 */
+		    }
              </style>
         <div class="row-fluid">
             <div class="span12">
@@ -152,6 +160,13 @@
 				<br>▪ Eyelink Portable Duo (Rm 3302)<p>
                         </div>
                     </div>
+		  <div class="container">
+ 		       <div class="text-box">
+   		         <p>Hardware</p>
+   		     </div>
+    		    <div class="text-box">
+   		         <p>Software</p>
+   		     </div> 
                    </div>  
                </div>
             </div>
@@ -177,36 +192,7 @@
 			    <br>
 		    </div>
 	  </body>
-
-	<hr>
-	 <section id="Facilities">
-                  <div class="page-header">
-                     <h3>Facilities</h3>
-                  </div>
-	<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Side-by-Side Text Boxes</title>		
-		<style>
-		    .container {
-		        display: flex; /* 使用 Flexbox 布局 */
-		    }
- 		   .text-box {
- 		       flex: 1; /* 让文本框平均占据可用空间 */
-   		     margin-right: 10px; /* 设置文本框之间的间距 */
-     		 	  padding: 10px; /* 设置内边距 */
-		    }
-		</style>
-		</head>
-		<body>
- 		   <div class="container">
- 		       <div class="text-box">
-   		         <p>Hardware</p>
-   		     </div>
-    		    <div class="text-box">
-   		         <p>Software</p>
-   		     </div>
-  		  </div>		       
+	       
   
 
 	</ol>	       
