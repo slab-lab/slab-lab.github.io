@@ -33,6 +33,7 @@ body {
 	display: table-cell;
 	width: 1%;
 	float: none;
+	font-size:14px;
 }
 
 .navbar .nav li a {
