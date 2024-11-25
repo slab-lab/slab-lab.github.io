@@ -138,25 +138,29 @@
                      text-align: center;
                  }
              </style>
-        <div class="row-fluid">
-            <div class="span12">
-               <div class="img-container">
-                 <div style="display: flex; justify-content: space-between;">
-                    <div style="flex: 1;">
-                       <h4>Welcome to</h4>
-                        <img src="files/slab_letter.png" class="small-img" alt="Slab Letter">
-                        <div class="text">
-                           <p>We are based in the <a href="https://huma.hkust.edu.hk/" target="_blank">Division of Humanities</a> at Hong Kong University of Science and Technology.
-                            <p>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="img-container">
+                        <div class="content-with-image" style="display: flex; justify-content: space-between;">
+                            <!-- Text Content -->
+                            <div class="text-content" style="flex: 1;">
+                                <h4>Welcome to</h4>
+                                <img src="files/slab_letter.png" class="small-img" alt="Slab Letter">
+                                <div class="text">
+                                    <p>
+                                        We are based in the 
+                                        <a href="https://huma.hkust.edu.hk/" target="_blank">Division of Humanities</a> at Hong Kong University of Science and Technology.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Image Content -->
+                            <div class="image-content" style="flex: 2;">
+                                <img src="files/Photo_Homepage.jpg" class="large-img" alt="Photo Homepage">
+                            </div>
                         </div>
                     </div>
-                    <div style="flex: 2;">
-                        <img src="files/Photo_Homepage.jpg" class="large-img" alt="Photo Homepage">
-                    </div>
-                   </div>  
-               </div>
+                </div>
             </div>
-         </div>
       </body>
 </html>
 <hr>
@@ -300,24 +304,28 @@
                
                   <script>
                   const updateContentLayout = () => {
-                    const isSmallScreen = window.innerWidth <= 768; // 判断屏幕宽度是否小于等于768px
-                    const contentBlocks = document.querySelectorAll('.content-with-image');
-                    contentBlocks.forEach(contentBlock => {
-                      const textContent = contentBlock.querySelector('.text-content');
-                      const imageContent = contentBlock.querySelector('.image-content');
-                      
-                      if (isSmallScreen) {
-                        contentBlock.style.display = 'block'; // 小屏幕时垂直布局
-                        textContent.style.marginBottom = '20px'; // 文字和图片之间增加间距
-                        imageContent.style.marginLeft = '0'; // 图片左对齐
-                        imageContent.style.textAlign = 'left'; // 图片文本左对齐
-                      } else {
-                        contentBlock.style.display = 'flex'; // 大屏幕时水平布局
-                        textContent.style.marginBottom = '0'; // 移除间距
-                        imageContent.style.marginLeft = '-10px'; // 恢复默认间距
-                        imageContent.style.textAlign = 'right'; // 图片右对齐
-                      }
-                    });
+                      const isSmallScreen = window.innerWidth <= 768; // 判断屏幕宽度是否小于等于768px
+                      const contentBlocks = document.querySelectorAll('.content-with-image');
+                  
+                      contentBlocks.forEach(contentBlock => {
+                          const textContent = contentBlock.querySelector('.text-content');
+                          const imageContent = contentBlock.querySelector('.image-content');
+                          const largeImage = contentBlock.querySelector('.large-img'); // 获取大图片元素
+                  
+                          if (isSmallScreen) {
+                              // 小屏幕: 将大图片移动到文本内容下方
+                              contentBlock.style.flexDirection = 'column'; // 改为垂直排列
+                              if (largeImage && textContent) {
+                                  textContent.appendChild(largeImage); // 将大图片插入到文本内容的末尾
+                              }
+                          } else {
+                              // 大屏幕: 恢复默认布局
+                              contentBlock.style.flexDirection = 'row'; // 改为水平排列
+                              if (largeImage && imageContent) {
+                                  imageContent.appendChild(largeImage); // 将大图片还原到图片内容块中
+                              }
+                          }
+                      });
                   };
                   
                   // 初始化布局
@@ -326,6 +334,7 @@
                   // 监听窗口大小变化
                   window.addEventListener('resize', updateContentLayout);
                   </script>
+
 
 
 
