@@ -239,9 +239,9 @@
                   </style>
                
                   <!-- First Content Block -->
-                  <div class="content-with-image" style="display: flex; align-items: center; gap: -10px;">
+                  <div class="content-with-image" style="display: flex; align-items: center; gap: -10px; flex-wrap: wrap;">
                       <!-- Text Content -->
-                      <div class="text-content" style="flex: 1; text-align: justify;">
+                      <div class="text-content" style="flex: 1; text-align: justify; margin-bottom: 10px;">
                           <h3>Second-language learning of speech prosody</h3>
                           <p>
                               It is well established that the first language (L1) is claimed to be responsible for second-language learners’ (in)ability to process sounds in a new language. However, the conditions under which the L1 facilitates or inhibits the learning of new sounds have yet to be understood. Adopting phonetic and psycholinguistic approaches, our research focuses on how lexical tones (Mandarin tones: /pā/ ‘eight’ T1, /pá/ ‘to pull out’ T2, /pǎ/ ‘to hold’ T3, /pà/ ‘father’ T4) and lexical stress (English stress: DEsert vs. deSERT) are processed by adult second-language learners who speak different languages as L1.
@@ -252,11 +252,40 @@
                           </p>
                       </div>
                       <!-- Image Content -->
-                      <div class="image-content" style="flex: 0 0 auto; margin-left: -10px; text-align: right;">
+                      <div class="image-content" style="flex: 0 0 auto; margin-left: -10px; text-align: right; width: 100%; max-width: 200px;">
                           <img src="files/Theme1.PNG" style="width: 70%; height: auto; max-width: 200px;" alt="Illustration" class="responsive-img theme-img">
                       </div>
                   </div>
+                  <script>
+                    // JavaScript动态调整样式
+                    const updateContentLayout = () => {
+                      const isSmallScreen = window.innerWidth <= 768; // 判断屏幕宽度是否小于等于768px
+                      const contentBlock = document.querySelector('.content-with-image');
+                      const textContent = document.querySelector('.text-content');
+                      const imageContent = document.querySelector('.image-content');
                   
+                      if (isSmallScreen) {
+                        contentBlock.style.display = 'block'; // 小屏幕时垂直布局
+                        textContent.style.marginBottom = '20px'; // 文字和图片之间增加间距
+                        imageContent.style.marginLeft = '0'; // 图片左对齐
+                        imageContent.style.textAlign = 'left'; // 图片文本左对齐
+                      } else {
+                        contentBlock.style.display = 'flex'; // 大屏幕时水平布局
+                        textContent.style.marginBottom = '0'; // 移除间距
+                        imageContent.style.marginLeft = '-10px'; // 恢复默认间距
+                        imageContent.style.textAlign = 'right'; // 图片右对齐
+                      }
+                    };
+                  
+                    // 初始化布局
+                    updateContentLayout();
+                  
+                    // 监听窗口大小变化
+                    window.addEventListener('resize', updateContentLayout);
+                  </script>
+
+
+               
                   <!-- Second Content Block -->
                   <div class="content-with-image"  style="display: flex; align-items: center; gap: -10px;">
                       <!-- Text Content -->
