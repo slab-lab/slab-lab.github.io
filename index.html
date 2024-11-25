@@ -299,13 +299,13 @@
                   </div>
                
                   <script>
-                    // JavaScript动态调整样式
-                    const updateContentLayout = () => {
-                      const isSmallScreen = window.innerWidth <= 768; // 判断屏幕宽度是否小于等于768px
-                      const contentBlock = document.querySelector('.content-with-image');
-                      const textContent = document.querySelector('.text-content');
-                      const imageContent = document.querySelector('.image-content');
-                  
+                  const updateContentLayout = () => {
+                    const isSmallScreen = window.innerWidth <= 768; // 判断屏幕宽度是否小于等于768px
+                    const contentBlocks = document.querySelectorAll('.content-with-image');
+                    contentBlocks.forEach(contentBlock => {
+                      const textContent = contentBlock.querySelector('.text-content');
+                      const imageContent = contentBlock.querySelector('.image-content');
+                      
                       if (isSmallScreen) {
                         contentBlock.style.display = 'block'; // 小屏幕时垂直布局
                         textContent.style.marginBottom = '20px'; // 文字和图片之间增加间距
@@ -317,13 +317,14 @@
                         imageContent.style.marginLeft = '-10px'; // 恢复默认间距
                         imageContent.style.textAlign = 'right'; // 图片右对齐
                       }
-                    };
+                    });
+                  };
                   
-                    // 初始化布局
-                    updateContentLayout();
+                  // 初始化布局
+                  updateContentLayout();
                   
-                    // 监听窗口大小变化
-                    window.addEventListener('resize', updateContentLayout);
+                  // 监听窗口大小变化
+                  window.addEventListener('resize', updateContentLayout);
                   </script>
 
 
