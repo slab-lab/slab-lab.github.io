@@ -208,7 +208,7 @@
 
 <section id="staff">
    <div class="row-fluid" style="display: flex; align-items: flex-start; padding-top: 20px; flex-wrap: wrap;">
-      <div class="image-content" style="flex: 0 0 auto; margin-right: 20px; width: 200px;">
+      <div class="image-content" style="flex: 0 0 auto; margin-right: 10px; width: 200px;">
          <img src="thumbs/Photo_Quentin.jpeg" alt="Quentin Zhen QIN" style="width: 100%; height: auto;"/ >
       </div>
       <div class="text-content" style="flex: 1; margin-bottom: 10px;">
@@ -354,6 +354,36 @@
          <p style="text-align: left; line-height: 1.6;margin-left: 220px; margin-top:20px;">· Weijie TAN (Research Assistant,  2019)</p>
    </div>
    </div>
+	<script>
+  // JavaScript动态调整样式
+  const updateContentLayout = () => {
+    const isSmallScreen = window.innerWidth <= 768; // 判断屏幕宽度是否小于等于768px
+    const contentBlocks = document.querySelectorAll('.row-fluid'); // 获取所有 .row-fluid 块
+
+    // 遍历每个 .row-fluid 块并应用样式
+    contentBlocks.forEach(contentBlock => {
+      const textContent = contentBlock.querySelector('.text-content');
+      const imageContent = contentBlock.querySelector('.image-content');
+
+      if (isSmallScreen) {
+        contentBlock.style.display = 'block'; // 小屏幕时垂直布局
+        textContent.style.marginLeft = '0'; // 移除左边距
+        imageContent.style.marginRight = '0'; // 移除右边距
+        imageContent.style.marginBottom = '20px'; // 图片和文字之间增加间距
+      } else {
+        contentBlock.style.display = 'flex'; // 大屏幕时水平布局
+        textContent.style.marginLeft = '20px'; // 保持文字左边距与图片对齐
+        imageContent.style.marginRight = '20px'; // 保持图片右边距
+        imageContent.style.marginBottom = '0'; // 移除间距
+      }
+    });
+  };
+
+  // 初始化布局
+  window.addEventListener('load', updateContentLayout);
+  // 监听窗口大小变化
+  window.addEventListener('resize', updateContentLayout);
+</script>
 </section>
 
 <hr>
