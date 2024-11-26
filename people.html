@@ -230,33 +230,33 @@
          <p style="text-align: justify;">Susu graduated from the University of Hong Kong with an MA degree in Linguistics. She has a strong interest in psycholinguistics, specifically understanding how individuals acquire and process the prosodic features of a second language. In her previous research project, she explored implicit learning of lexical stress in second language acquisition. She is currently involved in an EEG study on L2 learners' consolidation of Cantonese tones during daytime naps.</p>
       </div>
    </div>
-<script>
-  // JavaScript动态调整样式
-  const updateContentLayout = () => {
-    const isSmallScreen = window.innerWidth <= 768; // 判断屏幕宽度是否小于等于768px
-    const contentBlock = document.querySelector('.row-fluid');
-    const textContent = document.querySelector('.text-content');
-    const imageContent = document.querySelector('.image-content');
-
-    if (isSmallScreen) {
-      contentBlock.style.display = 'block'; // 小屏幕时垂直布局
-      textContent.style.marginLeft = '0'; // 移除左边距
-      imageContent.style.marginRight = '0'; // 移除右边距
-      imageContent.style.marginBottom = '20px'; // 图片和文字之间增加间距
-    } else {
-      contentBlock.style.display = 'flex'; // 大屏幕时水平布局
-      textContent.style.marginLeft = '20px'; // 保持文字左边距与图片对齐
-      imageContent.style.marginRight = '20px'; // 保持图片右边距
-      imageContent.style.marginBottom = '0'; // 移除间距
-    }
-  };
-
-  // 初始化布局
-  updateContentLayout();
-
-  // 监听窗口大小变化
-  window.addEventListener('resize', updateContentLayout);
-</script>
+	<script>
+	  // JavaScript动态调整样式
+	  const updateContentLayout = () => {
+	    const isSmallScreen = window.innerWidth <= 768; // 判断屏幕宽度是否小于等于768px
+	    const contentBlock = document.querySelector('.row-fluid');
+	    const textContent = document.querySelector('.text-content');
+	    const imageContent = document.querySelector('.image-content');
+	
+	    if (isSmallScreen) {
+	      contentBlock.style.display = 'block'; // 小屏幕时垂直布局
+	      textContent.style.marginLeft = '0'; // 移除左边距
+	      imageContent.style.marginRight = '0'; // 移除右边距
+	      imageContent.style.marginBottom = '20px'; // 图片和文字之间增加间距
+	    } else {
+	      contentBlock.style.display = 'flex'; // 大屏幕时水平布局
+	      textContent.style.marginLeft = '20px'; // 保持文字左边距与图片对齐
+	      imageContent.style.marginRight = '20px'; // 保持图片右边距
+	      imageContent.style.marginBottom = '0'; // 移除间距
+	    }
+	  };
+	
+	  // 初始化布局
+	  updateContentLayout();
+	
+	  // 监听窗口大小变化
+	  window.addEventListener('resize', updateContentLayout);
+	</script>
 <hr>
 	
    <div class="row-fluid" style="display: flex; align-items: flex-start; padding-top: 20px; flex-wrap: wrap;">
