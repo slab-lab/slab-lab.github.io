@@ -500,6 +500,78 @@
   window.addEventListener('resize', updateAlumniLayout);
 </script>
 
+<section id="alumni">
+   <div class="row-fluid" style="text-align: center; padding-top: 10px;">
+      <h4>Past Members and Alumni</h4>
+   </div>
+   <div class="row-fluid alumni-entry" style="display: flex; align-items: flex-start; padding-top: 15px; flex-wrap: wrap;">
+      <div class="image-content" style="flex: 0 0 auto; margin-right: 20px; width: 200px;">
+         <img src="thumbs/Photo_Cindy.png" alt="Cindy, Rui JIN" style="width: 100%; height: 60%;" />
+      </div>
+      <div class="text-content" style="flex: 1;">
+         <h4 style="text-align: left; margin-top: 0; font-weight: normal; font-size: 18px;">· Cindy, Rui JIN 金蕊 (Senior Research Assistant, 2021-2022)</h4>
+         <p style="text-align: justify;">Cindy is currently a Ph.D student in Psychology at the University of Florida.</p>
+      </div>
+   </div>
+   <div class="row-fluid alumni-entry" style="display: flex; align-items: flex-start; padding-top: 15px; flex-wrap: wrap;">
+      <div class="image-content" style="flex: 0 0 auto; margin-right: 20px; width: 200px;">
+         <img src="thumbs/Photo_Ruofan_edited.jpg" alt="Ruofan Wu" style="width: 100%; height: auto;" />
+      </div>
+      <div class="text-content" style="flex: 1;">
+         <h4 style="text-align: left; margin-top: 0; font-weight: normal; font-size: 18px;">· Ruofan WU 吳若繁 (Research Assistant, 2022-2023)</h4>
+         <p style="text-align: justify;">Ruofan is currently a Ph.D student at the Hong Kong Polytechnic University.</p>
+      </div>
+   </div>
+   <div class="row-fluid alumni-entry" style="padding-top: 15px;">
+      <div class="text-content" style="flex: 1;">
+         <p class="text-only" style="text-align: left; line-height: 1.6; margin-left: 220px; margin-top: 20px;">· Yuxin ZHU (MGCS Research Assistant, 2021-2022)</p>
+         <p class="text-only" style="text-align: left; line-height: 1.6; margin-left: 220px; margin-top: 20px;">· Martin, Yu Ting LEE (RPG Research Assistant, 2021)</p>
+         <p class="text-only" style="text-align: left; line-height: 1.6; margin-left: 220px; margin-top: 20px;">· Minzhi GONG (Research Assistant, 2020)</p>
+         <p class="text-only" style="text-align: left; line-height: 1.6; margin-left: 220px; margin-top: 20px;">· Weijie TAN (Research Assistant, 2019)</p>
+      </div>
+   </div>
+</section>
+
+<script>
+  // JavaScript动态调整样式
+  const updateAlumniLayout = () => {
+    const isSmallScreen = window.innerWidth <= 768; // 判断屏幕宽度是否小于等于768px
+    const alumniEntries = document.querySelectorAll('.alumni-entry');
+
+    alumniEntries.forEach(entry => {
+      const imageContent = entry.querySelector('.image-content');
+      const textContent = entry.querySelector('.text-content');
+      const textOnly = entry.querySelectorAll('.text-only');
+
+      if (isSmallScreen) {
+        // 小屏幕调整布局
+        if (imageContent && imageContent.querySelector('img')) {
+          entry.style.display = 'block'; // 图片独占一行
+          imageContent.style.marginBottom = '15px'; // 图片和文字间距
+        }
+        // 调整纯文字部分
+        textOnly.forEach(p => {
+          p.style.marginLeft = '0'; // 移除左边距
+          p.style.textAlign = 'left'; // 保持左对齐
+        });
+      } else {
+        // 大屏幕恢复布局
+        entry.style.display = 'flex';
+        if (imageContent) {
+          imageContent.style.marginBottom = '0'; // 恢复图片下方无间距
+        }
+        textOnly.forEach(p => {
+          p.style.marginLeft = '220px'; // 保留左边距
+        });
+      }
+    });
+  };
+
+  // 初始化布局
+  window.addEventListener('load', updateAlumniLayout);
+  // 监听窗口大小变化
+  window.addEventListener('resize', updateAlumniLayout);
+</script>
 
 <hr>
 	
