@@ -379,10 +379,10 @@
    </div>
    <div class="row-fluid alumni-entry" style="padding-top: 15px;">
       <div class="text-content" style="flex: 1;">
-         <p class="text-only" style="text-align: left; line-height: 1.6; margin-left: 220px; margin-top: 20px;">· Yuxin ZHU (MGCS Research Assistant, 2021-2022)</p>
-         <p class="text-only" style="text-align: left; line-height: 1.6; margin-left: 220px; margin-top: 20px;">· Martin, Yu Ting LEE (RPG Research Assistant, 2021)</p>
-         <p class="text-only" style="text-align: left; line-height: 1.6; margin-left: 220px; margin-top: 20px;">· Minzhi GONG (Research Assistant, 2020)</p>
-         <p class="text-only" style="text-align: left; line-height: 1.6; margin-left: 220px; margin-top: 20px;">· Weijie TAN (Research Assistant, 2019)</p>
+         <p style="text-align: left; line-height: 1.6; margin-left: 0; margin-top:20px;">· Yuxin ZHU (MGCS Research Assistant, 2021-2022)</p>
+         <p style="text-align: left; line-height: 1.6; margin-left: 0; margin-top:20px;">· Martin, Yu Ting LEE (RPG Research Assistant, 2021)</p>
+         <p style="text-align: left; line-height: 1.6; margin-left: 0; margin-top:20px;">· Minzhi GONG (Research Assistant, 2020)</p>
+         <p style="text-align: left; line-height: 1.6; margin-left: 0; margin-top:20px;">· Weijie TAN (Research Assistant, 2019)</p>
       </div>
    </div>
 </section>
@@ -396,26 +396,28 @@
     alumniEntries.forEach(entry => {
       const imageContent = entry.querySelector('.image-content');
       const textContent = entry.querySelector('.text-content');
-      const textOnly = entry.querySelectorAll('.text-only');
 
       if (isSmallScreen) {
-        // 小屏幕：调整图片和文字样式
         if (imageContent && imageContent.querySelector('img')) {
-          entry.style.display = 'block'; // 图片和文字垂直排列
-          imageContent.style.marginBottom = '15px'; // 图片和文字间距
+          // 小屏幕，有图片，设置图片独占一行
+          entry.style.display = 'block';
+          imageContent.style.marginBottom = '15px'; // 图片和文字之间的间距
         }
-        textOnly.forEach(p => {
-          p.style.marginLeft = '0'; // 移除文字的左边距
-        });
+        if (!imageContent || !imageContent.querySelector('img')) {
+          // 小屏幕，没有图片，移除文字的左边距
+          if (textContent) {
+            textContent.style.marginLeft = '0';
+          }
+        }
       } else {
-        // 大屏幕：恢复水平布局
+        // 大屏幕，恢复水平布局
         entry.style.display = 'flex';
         if (imageContent) {
-          imageContent.style.marginBottom = '0'; // 恢复图片下方无间距
+          imageContent.style.marginBottom = '0';
         }
-        textOnly.forEach(p => {
-          p.style.marginLeft = '220px'; // 文字保留左边距
-        });
+        if (textContent) {
+          textContent.style.marginLeft = imageContent ? '20px' : '0';
+        }
       }
     });
   };
@@ -425,6 +427,7 @@
   // 监听窗口大小变化
   window.addEventListener('resize', updateAlumniLayout);
 </script>
+
 
 
 <hr>
