@@ -122,10 +122,7 @@
         /* 默认样式 */
         .hamburger-button {
           display: none;
-          font-size: 24px;
-          background: none;
-          border: none;
-          cursor: pointer;
+          
         }
       
         .nav {
@@ -149,6 +146,10 @@
           .hamburger-button {
             display: block;
             margin-bottom: 10px;
+             font-size: 24px;
+             background: none;
+             border: none;
+             cursor: pointer;
           }
       
           .nav {
@@ -162,8 +163,10 @@
           }
          
       
-          .nav.active {
+          .active {
             display: block; /* 点击按钮后显示 */
+             flex-direction: column;
+            align-items: flex-start; /* 左对齐 */
           }
         }
       </style>
@@ -179,10 +182,7 @@
         const updateNavbarLayout = () => {
           const isSmallScreen = window.innerWidth <= 768;
           const menu = document.getElementById('menu');
-      
-          // if (!isSmallScreen) {
-          //   menu.classList.remove('active'); // 在大屏幕时默认显示
-          // }
+
         };
       
         // 初始化布局
