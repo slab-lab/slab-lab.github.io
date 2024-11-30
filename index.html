@@ -152,10 +152,8 @@
              cursor: pointer;
           }
       
-          .nav {
+          #menu {
             display: none; /* 初始状态为隐藏 */
-            flex-direction: column;
-            align-items: flex-start; /* 左对齐 */
           }
       
           .nav li {
@@ -164,8 +162,8 @@
          
       
           .active {
-            display: block; /* 点击按钮后显示 */
-             flex-direction: column;
+            display: flex; /* 点击按钮后显示 */
+            flex-direction: column;
             align-items: flex-start; /* 左对齐 */
           }
         }
