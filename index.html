@@ -106,7 +106,7 @@
           <div class="navbar-inner">
              <div class="container">
               <button class="hamburger-button" onclick="toggleMenu()">☰</button>
-              <ul class="nav active" id="menu">
+              <ul class="nav" id="menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="people.html">Members</a></li>
                 <li><a href="publications.html">Publications</a></li>
@@ -160,9 +160,10 @@
           .nav li {
             margin: 10px 0;
           }
+         
       
           .nav.active {
-            display: flex; /* 点击按钮后显示 */
+            display: block; /* 点击按钮后显示 */
           }
         }
       </style>
@@ -181,8 +182,6 @@
       
           if (!isSmallScreen) {
             menu.classList.remove('active'); // 在大屏幕时默认显示
-          }
-          else{
           }
         };
       
