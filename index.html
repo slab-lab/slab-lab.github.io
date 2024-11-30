@@ -154,6 +154,8 @@
       
           #menu {
             display: none; /* 初始状态为隐藏 */
+             flex-direction: column;
+            align-items: flex-start; /* 左对齐 */
           }
       
           .nav li {
@@ -161,11 +163,11 @@
           }
          
       
-          .active {
+/*           .active {
             display: flex; /* 点击按钮后显示 */
             flex-direction: column;
             align-items: flex-start; /* 左对齐 */
-          }
+          } */
         }
       </style>
       
@@ -180,6 +182,14 @@
         const updateNavbarLayout = () => {
           const isSmallScreen = window.innerWidth <= 768;
           const menu = document.getElementById('menu');
+
+           if (isSmallScreen){
+              if (menu.style.display == 'flex'){
+                 menu.style.display = 'none'
+              }
+              else
+                 menu.style.display = 'flex'
+           }
 
         };
       
