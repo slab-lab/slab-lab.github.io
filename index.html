@@ -175,21 +175,20 @@
         // 切换菜单显示
         const toggleMenu = () => {
           const menu = document.getElementById('menu');
-          menu.classList.toggle('active');
+          // menu.classList.toggle('active');
+            if (menu.style.display == 'flex'){
+                 menu.style.display = 'none'
+              }
+              else
+                 menu.style.display = 'flex'
+           }
         };
       
         // 响应式调整布局
         const updateNavbarLayout = () => {
           const isSmallScreen = window.innerWidth <= 768;
           const menu = document.getElementById('menu');
-
-           if (isSmallScreen){
-              if (menu.style.display == 'flex'){
-                 menu.style.display = 'none'
-              }
-              else
-                 menu.style.display = 'flex'
-           }
+             
 
         };
       
