@@ -259,6 +259,52 @@
          </div>
          <div class="row-fluid">
             <div class="span12">
+<script>
+  // JavaScript动态调整样式
+  const updateContentLayout = () => {
+    const isSmallScreen = window.innerWidth <= 768; // 判断屏幕宽度是否小于等于768px
+    const contentBlocks = document.querySelectorAll('.row-fluid .img-1'); // 获取每个图片和文字的容器
+
+    contentBlocks.forEach(contentBlock => {
+      const images = contentBlock.querySelectorAll('img'); // 获取图片
+      const textBlocks = contentBlock.querySelectorAll('p, li'); // 获取文字部分
+
+      if (isSmallScreen) {
+        // 小屏幕布局：图片和文字垂直排列
+        contentBlock.style.display = 'block'; // 设置容器垂直排列
+        images.forEach(image => {
+          image.style.display = 'block'; // 图片独占一行
+          image.style.margin = '0 auto'; // 图片居中
+          image.style.width = '80%'; // 缩放图片宽度
+          image.style.marginBottom = '10px'; // 图片与文字之间的间距
+        });
+        textBlocks.forEach(textBlock => {
+          textBlock.style.textAlign = 'center'; // 文字居中
+          textBlock.style.marginTop = '10px'; // 文字上方增加间距
+        });
+      } else {
+        // 大屏幕布局：图片和文字水平排列
+        contentBlock.style.display = 'flex'; // 设置容器水平排列
+        contentBlock.style.justifyContent = 'space-between';
+        images.forEach(image => {
+          image.style.display = 'inline-block'; // 图片与文字在一行
+          image.style.margin = '0'; // 移除居中和额外间距
+          image.style.width = '100%'; // 恢复默认宽度
+        });
+        textBlocks.forEach(textBlock => {
+          textBlock.style.textAlign = 'left'; // 文字左对齐
+          textBlock.style.marginTop = '0'; // 移除多余间距
+        });
+      }
+    });
+  };
+
+  // 初始化布局
+  updateContentLayout();
+
+  // 监听窗口大小变化
+  window.addEventListener('resize', updateContentLayout);
+</script>
 
 	   <head>
 		<meta charset="UTF-8">
@@ -327,35 +373,6 @@
 <script>
     function adjustLayout() {
         const screenWidth = window.innerWidth;
-
-        // 调整图片和文字布局
-        const imgContainers = document.querySelectorAll('.row-fluid .img-1'); // 每个图片和文字块
-        imgContainers.forEach(container => {
-            if (screenWidth <= 768) {
-                // 小屏幕：图片和文字垂直排列（换行）
-                container.style.display = 'block';
-                container.style.textAlign = 'center'; // 图片居中
-                container.querySelectorAll('img').forEach(img => {
-                    img.style.display = 'block';
-                    img.style.margin = '0 auto'; // 居中图片
-                    img.style.width = '80%'; // 缩放图片宽度
-                });
-                container.querySelectorAll('p, li').forEach(text => {
-                    text.style.textAlign = 'center'; // 居中文字
-                });
-            } else {
-                // 大屏幕：图片和文字水平排列
-                container.style.display = 'flex';
-                container.style.justifyContent = 'space-between';
-                container.querySelectorAll('img').forEach(img => {
-                    img.style.width = '100%'; // 恢复默认宽度
-                });
-                container.querySelectorAll('p, li').forEach(text => {
-                    text.style.textAlign = 'left'; // 左对齐文字
-                });
-            }
-        });
-
         // 调整并列文字部分
         const parallelText = document.querySelector('.parallel-text'); // 并列文字容器
         if (parallelText) {
