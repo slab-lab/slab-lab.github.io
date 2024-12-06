@@ -271,15 +271,15 @@
 	      if (isSmallScreen) {
 	        // 小屏幕布局：图片和文字垂直排列
 	        block.style.display = 'block'; // 垂直排列
-	        block.style.textAlign = 'center'; // 居中图片和文字
+	        block.style.textAlign = 'left'; // 居中图片和文字
 	        if (image) {
 	          image.style.display = 'block'; // 图片独占一行
 	          image.style.margin = '0 auto'; // 图片居中
-	          image.style.width = '90%'; // 图片宽度调整为屏幕的 90%
+	          image.style.width = auto; // 图片宽度调整为屏幕的 90%
 	          image.style.marginBottom = '10px'; // 图片和文字之间的间距
 	        }
 	        if (text) {
-	          text.style.textAlign = 'center'; // 文字居中
+	          text.style.textAlign = 'left'; // 文字居中
 	          text.style.marginTop = '10px'; // 文字上方增加间距
 	        }
 	      } else {
