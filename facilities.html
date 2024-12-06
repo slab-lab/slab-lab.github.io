@@ -328,53 +328,53 @@
     function adjustLayout() {
         const screenWidth = window.innerWidth;
 
-        // 调整图片及文字容器
-        const imgContainers = document.querySelectorAll('.row-fluid .img-1'); // 图片部分
-        const textBlocks = document.querySelectorAll('.text-1, .text-2, .text-3'); // 图片对应的文字
-
+        // 调整图片和文字布局
+        const imgContainers = document.querySelectorAll('.row-fluid .img-1'); // 每个图片和文字块
         imgContainers.forEach(container => {
             if (screenWidth <= 768) {
-                // 小屏幕布局：垂直排列图片和文字
+                // 小屏幕：图片和文字垂直排列（换行）
                 container.style.display = 'block';
-                container.style.textAlign = 'center'; // 居中图片
+                container.style.textAlign = 'center'; // 图片居中
+                container.querySelectorAll('img').forEach(img => {
+                    img.style.display = 'block';
+                    img.style.margin = '0 auto'; // 居中图片
+                    img.style.width = '80%'; // 缩放图片宽度
+                });
+                container.querySelectorAll('p, li').forEach(text => {
+                    text.style.textAlign = 'center'; // 居中文字
+                });
             } else {
-                // 大屏幕布局：水平排列图片和文字
+                // 大屏幕：图片和文字水平排列
                 container.style.display = 'flex';
                 container.style.justifyContent = 'space-between';
-            }
-        });
-
-        textBlocks.forEach(textBlock => {
-            if (screenWidth <= 768) {
-                textBlock.style.textAlign = 'center'; // 小屏居中文字
-                textBlock.style.marginTop = '10px';
-            } else {
-                textBlock.style.textAlign = 'left'; // 大屏左对齐文字
-                textBlock.style.marginTop = '0';
+                container.querySelectorAll('img').forEach(img => {
+                    img.style.width = '100%'; // 恢复默认宽度
+                });
+                container.querySelectorAll('p, li').forEach(text => {
+                    text.style.textAlign = 'left'; // 左对齐文字
+                });
             }
         });
 
         // 调整并列文字部分
-        const parallelText = document.querySelector('.parallel-text'); // 获取并列文字容器
+        const parallelText = document.querySelector('.parallel-text'); // 并列文字容器
         if (parallelText) {
             if (screenWidth <= 768) {
-                // 小屏幕布局：垂直排列文字
+                // 小屏幕：垂直排列文字
                 parallelText.style.display = 'block';
-                const columns = parallelText.querySelectorAll('.column');
-                columns.forEach(column => {
-                    column.style.marginBottom = '20px'; // 为每列添加间距
-                    column.style.width = '100%'; // 每列占满宽度
-                    column.style.textAlign = 'left'; // 小屏左对齐文字
+                parallelText.querySelectorAll('.column').forEach(column => {
+                    column.style.marginBottom = '20px';
+                    column.style.width = '100%'; // 占满宽度
+                    column.style.textAlign = 'left'; // 左对齐文字
                 });
             } else {
-                // 大屏幕布局：水平排列文字
+                // 大屏幕：水平排列文字
                 parallelText.style.display = 'flex';
                 parallelText.style.justifyContent = 'space-between';
-                const columns = parallelText.querySelectorAll('.column');
-                columns.forEach(column => {
+                parallelText.querySelectorAll('.column').forEach(column => {
                     column.style.marginBottom = '0';
-                    column.style.width = '45%'; // 每列占据45%的宽度
-                    column.style.textAlign = 'left'; // 大屏左对齐
+                    column.style.width = '45%'; // 每列占 45% 的宽度
+                    column.style.textAlign = 'left'; // 左对齐文字
                 });
             }
         }
@@ -386,6 +386,7 @@
     // 在窗口大小变化时触发
     window.addEventListener('resize', adjustLayout);
 </script>
+
 
 
 	       
