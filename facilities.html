@@ -324,7 +324,61 @@
 
 	       </body>
 <hr>
-		
+		<script>
+    function adjustLayout() {
+        const screenWidth = window.innerWidth;
+
+        // 调整图片及文字容器
+        const imgContainer = document.querySelector('.row-fluid .img-1'); // 图片部分
+        const textBlocks = document.querySelectorAll('.text-1, .text-2, .text-3'); // 图片对应的文字
+        if (screenWidth <= 768) {
+            // 小屏幕布局：垂直排列图片和文字
+            imgContainer.style.display = 'block';
+            textBlocks.forEach(textBlock => {
+                textBlock.style.textAlign = 'center';
+                textBlock.style.marginTop = '10px';
+            });
+        } else {
+            // 大屏幕布局：水平排列
+            imgContainer.style.display = 'flex';
+            imgContainer.style.justifyContent = 'space-between';
+            textBlocks.forEach(textBlock => {
+                textBlock.style.textAlign = 'left';
+                textBlock.style.marginTop = '0';
+            });
+        }
+
+        // 调整并列文字部分
+        const parallelText = document.querySelector('.parallel-text'); // 获取并列文字容器
+        if (screenWidth <= 768) {
+            // 小屏幕布局：垂直排列文字
+            parallelText.style.display = 'block';
+            const columns = parallelText.querySelectorAll('.column');
+            columns.forEach(column => {
+                column.style.marginBottom = '20px'; // 为每列添加间距
+                column.style.width = '100%'; // 每列占满宽度
+                column.style.textAlign = 'center'; // 中心对齐
+            });
+        } else {
+            // 大屏幕布局：水平排列文字
+            parallelText.style.display = 'flex';
+            parallelText.style.justifyContent = 'space-between';
+            const columns = parallelText.querySelectorAll('.column');
+            columns.forEach(column => {
+                column.style.marginBottom = '0';
+                column.style.width = '45%'; // 每列占据45%的宽度
+                column.style.textAlign = 'left'; // 左对齐
+            });
+        }
+    }
+
+    // 初始化调整
+    adjustLayout();
+
+    // 在窗口大小变化时触发
+    window.addEventListener('resize', adjustLayout);
+</script>
+
 	       
 </html>             
 		       
