@@ -282,11 +282,13 @@
 <script>
    function adjustCarouselSize() {
       const container = document.getElementById('carousel-container');
+      const captions = document.querySelectorAll('#carousel-container .carousel-caption p'); // 选择所有标题元素
       const width = window.innerWidth;
 
       if (width < 768) { // 小屏幕
          container.style.width = '90%';
          container.style.height = 'auto';
+
          // 修改标题字体大小
          captions.forEach(caption => {
             caption.style.fontSize = '14px'; // 小屏幕标题字体大小
@@ -294,6 +296,11 @@
       } else { // 大屏幕
          container.style.width = '60%';
          container.style.height = '60%';
+
+         // 恢复标题字体大小
+         captions.forEach(caption => {
+            caption.style.fontSize = '18px'; // 大屏幕标题字体大小
+         });
       }
    }
 
@@ -301,6 +308,7 @@
    window.addEventListener('DOMContentLoaded', adjustCarouselSize);
    window.addEventListener('resize', adjustCarouselSize);
 </script>
+
 
 </div>
 
