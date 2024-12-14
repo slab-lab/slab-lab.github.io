@@ -287,7 +287,10 @@
       if (width < 768) { // 小屏幕
          container.style.width = '90%';
          container.style.height = 'auto';
-         container.style.fontSize = '10px';
+         // 修改标题字体大小
+         captions.forEach(caption => {
+            caption.style.fontSize = '14px'; // 小屏幕标题字体大小
+         });
       } else { // 大屏幕
          container.style.width = '60%';
          container.style.height = '60%';
