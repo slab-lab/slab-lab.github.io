@@ -242,7 +242,8 @@
             object-fit: cover;
             display: block;
             border-radius: 4px;
-          }
+		  }
+          .fac-grid .eeg-full img { aspect-ratio: auto; height: auto; }
           .fac-grid figcaption p { font-size: 24px; margin: 12px 0 6px; }
           .fac-grid figcaption li { margin-left: 20px; }
           .fac-caption-full { grid-column: 1 / -1; margin-bottom: 30px; text-align: center; }
@@ -263,7 +264,7 @@
           <figure style="margin-top: 30px;">
             <img src="files/facilities_F2a.jpg" alt="EEG Station - participant wearing an EEG cap">
           </figure>
-          <figure style="margin-top: 30px;">
+          <figure class="eeg-full" style="margin-top: 30px;">
             <img src="files/facilities_F2b.jpg" alt="EEG Station - stimulus and recording computers">
           </figure>
           <figcaption class="fac-caption-full"><p>EEG Station</p><li>Neuroscan EEG system (64CH, SynAmps RT amplifier)</li></figcaption>
