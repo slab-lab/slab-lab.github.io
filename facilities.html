@@ -228,35 +228,46 @@
                  }
 
              </style>
-        <div class="row-fluid">
-            <div class="span12">
-               <div class="img-1">
-                 <div style="display: flex; justify-content: space-between;">
-                    <div style="flex: 1;padding: 0 15px 0 0;">
-                        <img src="files/facilities_F1.png" class="img-1" alt="Facility 1">
-                        <div class="text-1">
-                           <p style="text-align:left; margin-top: 10px; font-size: 24px">Main testing station</p>
-                        </div>
-                    </div>
-                    <div style="flex: 1;padding: 0 15px 0 0;">
-                        <img src="files/facilities_F2.jpg" class="img-2" alt="Facility 2">
-		        <div class="text-2">
-                           <p style="margin-top: 10px; font-size: 24px">EEG Station</p>
-				<li>Neuroscan EEG system (64CH, SynAmps RT amplifier)</li>
-                        </div>
-                    </div>
-		    <div style="flex: 1;">
-                        <img src="files/facilities_F3.jpg" class="img-3" alt="Facility 3">
-		        <div class="text-3">
-                           <p style="margin-top: 10px; font-size: 24px">Eye-tracking room</p>
-				<li>EyeLink Portable Duo (SHSS Eyetracking Laboratory)</li>
-                        </div>
-                    </div>
-		 
-                   </div>  
-               </div>
-            </div>
-         </div>
+                <style>
+          .fac-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 30px;
+            row-gap: 10px;
+          }
+          .fac-grid figure { margin: 0; }
+          .fac-grid img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+            border-radius: 4px;
+          }
+          .fac-grid figcaption p { font-size: 24px; margin: 12px 0 6px; }
+          .fac-grid figcaption li { margin-left: 20px; }
+          .fac-caption-full { grid-column: 1 / -1; margin-bottom: 30px; text-align: center; }
+          .fac-caption-full li { margin-left: 0; list-style-position: inside; }
+          @media (max-width: 768px) {
+            .fac-grid { grid-template-columns: 1fr; }
+          }
+        </style>
+        <div class="fac-grid">
+          <figure>
+            <img src="files/facilities_F1.png" alt="Main testing station">
+            <figcaption><p>Main testing station</p><li>4 testing desktop computers</li></figcaption>
+          </figure>
+          <figure>
+            <img src="files/facilities_F3.jpg" alt="Eye-tracking room">
+            <figcaption><p>Eye-tracking room</p><li>EyeLink Portable Duo (SHSS Eyetracking Laboratory)</li></figcaption>
+          </figure>
+          <figure style="margin-top: 30px;">
+            <img src="files/facilities_F2a.jpg" alt="EEG Station - participant wearing an EEG cap">
+          </figure>
+          <figure style="margin-top: 30px;">
+            <img src="files/facilities_F2b.jpg" alt="EEG Station - stimulus and recording computers">
+          </figure>
+          <figcaption class="fac-caption-full"><p>EEG Station</p><li>Neuroscan EEG system (64CH, SynAmps RT amplifier)</li></figcaption>
+        </div>
          <div class="row-fluid">
             <div class="span12">
 	<script>
